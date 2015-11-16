@@ -18,15 +18,6 @@
       return otherCtrl.$element[0].contains(this.$element[0]);
     };
 
-    // Destination for transcluded content.
-    var toTransclude;
-    $scope.$on('$destroy', function(){
-      if(toTransclude){
-        toTransclude.remove();
-        toTransclude = null;
-      }
-    });
-
     // A temporary container for transcluded content, so that content will not
     // be detached from the DOM during link. This ensures that controllers and
     // other data parent nodes are accessible within the transcluded content.
